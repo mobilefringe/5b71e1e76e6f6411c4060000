@@ -141,12 +141,17 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
                 social_media: [
                     {
                         name: "Facebook",
-                        url: "https://www.facebook.com/ShopCerritos",
+                        url: "https://www.facebook.com/LBTowneCenter",
                         iconClass: "fab fa-facebook"
                     },
                     {
+                        name: "Twitter",
+                        url: "https://twitter.com/LBTowneCentr",
+                        iconClass: "fab fa-twitter"
+                    },
+                    {
                         name: "Instagram",
-                        url: "https://www.instagram.com/shopcerritos",
+                        url: "https://www.instagram.com/LBTowneCenter",
                         iconClass: "fab fa-instagram"
                     }
                 ],

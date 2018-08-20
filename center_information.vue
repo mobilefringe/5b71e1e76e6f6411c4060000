@@ -37,11 +37,11 @@
                             <div class="amenities_body" v-html="item.body"></div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12" v-if="amenities" v-for="item in amenities">
-                            <div class="amenities_body" v-html="item.body"></div>
-                        </div>
-                    </div>
+                    <!--<div class="row">-->
+                    <!--    <div class="col-md-12" v-if="amenities" v-for="item in amenities">-->
+                    <!--        <div class="amenities_body" v-html="item.body"></div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
                 </div>
                 <div class="location_image_container">
                     <div v-if="lowerBanner">

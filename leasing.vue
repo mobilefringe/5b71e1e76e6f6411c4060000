@@ -74,10 +74,10 @@ So, are you ready to “pop up” with us? Then let’s talk!</p>
                         }
                     }
                     
-                    // var temp_repo1 = this.findRepoByName('Leasing Booklet');
-                    // if(temp_repo1) {
-                    //     this.leasingBooklet = temp_repo1.images[0].image_url;
-                    // }
+                    var temp_repo1 = this.findRepoByName('Leasing Booklet');
+                    if(temp_repo1) {
+                        this.leasingBooklet = temp_repo1.images[0].image_url;
+                    }
 
                     var temp_repo2 = this.findRepoByName('Leasing Images');
                     if(temp_repo2) {

@@ -105,14 +105,14 @@
             },
             created() {
                 this.loadData().then(response => {
-                    // var temp_repo = this.findRepoByName('Contact Us Banner').images;
-                    // if(temp_repo != null) {
-                    //     this.pageBanner = temp_repo[0];
-                    // } else {
-                    //     this.pageBanner = {
-                    //         "image_url": "//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/jpeg/1529532304000/insidebanner2.jpg"
-                    //     }
-                    // }
+                    var temp_repo = this.findRepoByName('Contact Us Banner').images;
+                    if(temp_repo != null) {
+                        this.pageBanner = temp_repo[0];
+                    } else {
+                        this.pageBanner = {
+                            "image_url": "//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/jpeg/1529532304000/insidebanner2.jpg"
+                        }
+                    }
                     
                     this.main = response[0].data
                     this.contactInfo = response[0].data.subpages[0];

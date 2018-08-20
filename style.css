@@ -252,7 +252,8 @@ a {
         }
     }
     .mini_logo {
-        max-width: 120px;
+        // max-width: 120px;
+        max-width: 160px;
     }
 }
 .sticky {

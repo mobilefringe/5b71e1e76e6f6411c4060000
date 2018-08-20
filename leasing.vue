@@ -16,7 +16,12 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div v-if="main" v-html="main.body"></div>
+                            <!--<div v-if="main" v-html="main.body"></div>-->
+                            <p>Opening a new store can feel like a risk, but pop up leasing can help to create brand recognition with flexible short term leasing options. Pop up, Specialty Leasing or short-term leasing may go by various names but the end goal is the same. This pop up leasing concept is transforming the traditional rules of retail and redefining how shoppers interact with brands. So, whether you’re an new retailer or established brick-and-mortar eager to showcase a seasonal assortment, our prime shopping real estate, pop up leasing opportunities are designed to help you achieve your business goals.
+
+Whether your goal is to launch in a new market, reach a larger consumer audience or add an additional revenue stream, pop up leasing is short- term leasing option with long-term goals. Long Beach Towne Center is now seeking retail partnerships with premier local and national retail pop up operators.
+
+So, are you ready to “pop up” with us? Then let’s talk!</p>
                         </div>
                     </div>
                     <div class="row">

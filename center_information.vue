@@ -61,6 +61,7 @@
             data: function () {
                 return {
                     dataLoaded: false,
+                    pageBanner: null,
                     main: null,
                     amenities: null,
                     pageImages: null,

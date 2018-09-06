@@ -264,7 +264,7 @@
                 floorList () {
                     var floor_list = [];
                     // Get SVG Maps from Repo
-                    var floor_maps_repo = this.findRepoByName('SVG Maps');
+                    var floor_maps_repo = this.findRepoByName('SVG Map');
                     
                     if(floor_maps_repo !== null && floor_maps_repo !== undefined && floor_maps_repo.images.length > 0){
                         floor_maps = floor_maps_repo.images;

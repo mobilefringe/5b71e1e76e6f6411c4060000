@@ -158,6 +158,7 @@
                     }
                 
                     this.updateCurrentStore(this.id);
+                    this.getSVGMap
                     this.dataLoaded = true;
                 });
             },

@@ -164,6 +164,7 @@
                     this.updateCurrentStore(this.$route.params.id);
                 },
                 currentStore: function () {
+                    this.currentStore.zoom = 2;
                     if (_.includes(this.currentStore.store_front_url_abs, 'missing')) {
                         this.currentStore.store_front_url_abs = "//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/png/1534781683000/longbeach_default.png"
                     }
@@ -233,24 +234,34 @@
                     'findEventById',
                     'findCouponById'
                 ]),
-                getPNGurl () {
-                    return "https://www.mallmaverick.com" + this.property.map_url;
-                },
-                pngMapRef() {
-                    return this.$refs.pngmapref;
-                },
                 allStores() {
                     this.processedStores.map(function(store){
                         store.zoom = 1;
                     })
                     return this.processedStores;
                 },
+                // getSVGMap () {
+                //     var mapURL = "https://www.mallmaverick.com" + this.property.svgmap_url.split("?")[0];
+                //     return mapURL
+                // },
+                getSVGMap() {
+                    var svg_maps = this.findRepoByName("SVG Map").images 
+                    var floor_one = "";
+                    _.forEach(svg_maps, function(value, key) {
+                        if(value.id == 42816) {
+                            floor_one = _.split(value.image_url, '?');
+                            floor_one = floor_one[0];
+                        }
+                    });
+                    this.floorOne = floor_one;
+                },
                 floorList () {
                     var floor_list = [];
                     var floor_1 = {};
                     floor_1.id = "first-floor";
                     floor_1.title = "Level One";
-                    floor_1.map = this.getPNGurl;
+                    // floor_1.map = this.getSVGMap
+                    floor_1.map = this.floorOne;
                     floor_1.z_index = 1;
                     floor_1.show = true;
                     floor_list.push(floor_1);

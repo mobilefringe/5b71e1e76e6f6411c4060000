@@ -277,9 +277,10 @@
                             floor_1.show = true;
                             
                             floor_list.push(floor_1);
+                            console.log("map", floor_1.map)
                         }
                     }
-                    console.log("map", floor_1.map)
+                    
                     return floor_list;
                 }
             },

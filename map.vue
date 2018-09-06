@@ -71,7 +71,8 @@
                     suggestionAttribute: "name",
                     storeSearch: null,
                     currentSelection: null,
-                    dineFilter: 5962
+                    dineFilter: 5962,
+                    floorOne: null
                 }
             },
             created (){
@@ -155,9 +156,8 @@
                 getSVGMap() {
                     var svg_maps = this.findRepoByName("SVG Map").images 
                     var floor_one = "";
-                    var floor_two = "";
                     _.forEach(svg_maps, function(value, key) {
-                        if(value.id == 42738) {
+                        if(value.id == 42816) {
                             floor_one = _.split(value.image_url, '?');
                             floor_one = floor_one[0];
                         }

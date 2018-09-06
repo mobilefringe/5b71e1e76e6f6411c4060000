@@ -265,7 +265,6 @@
                     var floor_list = [];
                     // Get SVG Maps from Repo
                     var floor_maps_repo = this.findRepoByName('SVG Map');
-                    
                     if(floor_maps_repo !== null && floor_maps_repo !== undefined && floor_maps_repo.images.length > 0){
                         floor_maps = floor_maps_repo.images;
                         if (this.currentStore.z_coordinate == 1) {
@@ -275,12 +274,9 @@
                             floor_1.map = _.find(floor_maps, function(o){ return _.toNumber(o.id) == _.toNumber(42816);}).image_url;
                             floor_1.z_index = 1;
                             floor_1.show = true;
-                            
                             floor_list.push(floor_1);
-                            console.log("map", floor_1.map)
                         }
                     }
-                    
                     return floor_list;
                 }
             },

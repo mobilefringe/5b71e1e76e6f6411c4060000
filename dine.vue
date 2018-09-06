@@ -171,6 +171,22 @@
                     _.forEach(this.processedStores, function(value, key) {
                         if(_.includes(value.categories, vm.dineFilter)) {
                             if (_.includes(value.image_url, 'missing')) {
+                               value.no_store_logo = true;
+                            } else {
+                              value.no_store_logo = false;
+                            }
+                            store_list.push(value);
+                        }
+                    });
+                    this.filteredStores = store_list;
+                    return store_list
+                },
+                allStores() {
+                    var store_list = [];
+                    var vm = this;
+                    _.forEach(this.processedStores, function(value, key) {
+                        if(_.includes(value.categories, vm.dineFilter)) {
+                            if (_.includes(value.image_url, 'missing')) {
                                 value.image_url = "//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/png/1534781683000/longbeach_default.png";
                             }
                             store_list.push(value);

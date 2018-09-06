@@ -97,12 +97,27 @@
                     "storesByCategoryName",
                     'findCategoryByName'
                 ]),
+                // allStores() {
+                //     this.processedStores.map(function(store){
+                //         store.zoom = 1;
+                //     })
+                //     return this.processedStores;
+                // },
                 allStores() {
-                    this.processedStores.map(function(store){
-                        store.zoom = 1;
-                    })
-                    return this.processedStores;
+                    var all_stores = this.processedStores;
+                    _.forEach(all_stores, function(value, key) {
+                        value.zoom = 2;
+                    });
+                    var initZoom = {};
+                    initZoom.svgmap_region = "init";
+                    initZoom.z_coordinate = 1;
+                    initZoom.x = 0.5;
+                    initZoom.y = 0.5;
+                    initZoom.zoom = 1;
+                    all_stores.push(initZoom)
+                    return all_stores
                 },
+                
                 allCatergories() {
                     return this.processedCategories;
                 },
@@ -133,9 +148,21 @@
                         el.classList.remove("open");
                     }
                 },
-                getSVGMap () {
-                    var mapURL = "https://www.mallmaverick.com" + this.property.svgmap_url.split("?")[0];
-                    return mapURL
+                // getSVGMap () {
+                //     var mapURL = "https://www.mallmaverick.com" + this.property.svgmap_url.split("?")[0];
+                //     return mapURL
+                // },
+                getSVGMap() {
+                    var svg_maps = this.findRepoByName("SVG Map").images 
+                    var floor_one = "";
+                    var floor_two = "";
+                    _.forEach(svg_maps, function(value, key) {
+                        if(value.id == 42738) {
+                            floor_one = _.split(value.image_url, '?');
+                            floor_one = floor_one[0];
+                        }
+                    });
+                    this.floorOne = floor_one;
                 },
                 floorList () {
                     var floor_list = [];

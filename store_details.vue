@@ -259,6 +259,9 @@
                     });
                     this.floorOne = floor_one;
                 },
+                svgMapRef() {
+                    return this.$refs.svgmap_ref;
+                },
                 // floorList () {
                 //     var floor_list = [];
                 //     var floor_1 = {};

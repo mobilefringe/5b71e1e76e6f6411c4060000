@@ -246,17 +246,6 @@
                 //     var mapURL = "https://www.mallmaverick.com" + this.property.svgmap_url.split("?")[0];
                 //     return mapURL
                 // },
-                getSVGMap() {
-                    var svg_maps = this.findRepoByName("SVG Map").images 
-                    var floor_one = "";
-                    _.forEach(svg_maps, function(value, key) {
-                        if(value.id == 42816) {
-                            floor_one = _.split(value.image_url, '?');
-                            floor_one = floor_one[0];
-                        }
-                    });
-                    this.floorOne = floor_one;
-                },
                 svgMapRef() {
                     return this.$refs.svgmap_ref;
                 },
@@ -290,7 +279,7 @@
                             floor_list.push(floor_1);
                         }
                     }
-                    
+                    console.log("map", floor_1.map)
                     return floor_list;
                 }
             },

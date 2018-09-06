@@ -258,16 +258,37 @@
                     });
                     this.floorOne = floor_one;
                 },
+                // floorList () {
+                //     var floor_list = [];
+                //     var floor_1 = {};
+                //     floor_1.id = "first-floor";
+                //     floor_1.title = "Level One";
+                //     // floor_1.map = this.getSVGMap
+                //     floor_1.map = this.floorOne;
+                //     floor_1.z_index = 1;
+                //     floor_1.show = true;
+                //     floor_list.push(floor_1);
+                //     return floor_list;
+                // }
                 floorList () {
                     var floor_list = [];
-                    var floor_1 = {};
-                    floor_1.id = "first-floor";
-                    floor_1.title = "Level One";
-                    // floor_1.map = this.getSVGMap
-                    floor_1.map = this.floorOne;
-                    floor_1.z_index = 1;
-                    floor_1.show = true;
-                    floor_list.push(floor_1);
+                    // Get SVG Maps from Repo
+                    var floor_maps_repo = this.findRepoByName('SVG Maps');
+                    
+                    if(floor_maps_repo !== null && floor_maps_repo !== undefined && floor_maps_repo.images.length > 0){
+                        floor_maps = floor_maps_repo.images;
+                        if (this.currentStore.z_coordinate == 1) {
+                            var floor_1 = {};
+                            floor_1.id = "first-floor";
+                            floor_1.title = "Level 1";
+                            floor_1.map = _.find(floor_maps, function(o){ return _.toNumber(o.id) == _.toNumber(42816);}).image_url;
+                            floor_1.z_index = 1;
+                            floor_1.show = true;
+                            
+                            floor_list.push(floor_1);
+                        }
+                    }
+                    
                     return floor_list;
                 }
             },

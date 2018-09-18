@@ -167,8 +167,11 @@
                 },
                 currentStore: function () {
                     this.currentStore.zoom = 2;
+                    
                     if (_.includes(this.currentStore.store_front_url_abs, 'missing')) {
-                        this.currentStore.store_front_url_abs = "//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/png/1534781683000/longbeach_default.png"
+                        this.currentStore.no_logo = true
+                    } else {
+                        this.currentStore.no_logo = false
                     }
                     
                     var vm = this;

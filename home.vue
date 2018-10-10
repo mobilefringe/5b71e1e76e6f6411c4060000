@@ -6,6 +6,7 @@
                 <div class="home_banner_container">
                     <div class="prev"></div>
                     <slick ref="slick" :options="slickOptions">
+                        <!-- DYNAMIC BANNERS -->
                         <!--<div v-if="homeBanners" v-for="banner in homeBanners">-->
                         <!--    <div v-if="banner.name && banner.description && banner.url" class="banner_height">-->
                         <!--        <div class="banner_image" v-bind:style="{ backgroundImage: 'url(' + banner.image_url + ')' }"></div>-->
@@ -29,13 +30,9 @@
                         <!--        </a>-->
                         <!--    </div>-->
                         <!--</div>-->
-                        <div >
- 
-                            <div>
-                                <div class="banner_image" v-bind:style="{ backgroundImage: 'url(//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/jpeg/1539201852000/lbtc_home_1925x470-compressor.jpg)' }"></div>
-                            </div>
-                            
-                        </div>
+
+                        <div class="banner_image" v-bind:style="{ backgroundImage: 'url(//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/jpeg/1539201852000/lbtc_home_1925x470-compressor.jpg)' }"></div>
+
                     </slick>
                     <div class="next"></div>
                 </div>
@@ -131,7 +128,25 @@
                         slidesToShow: 1,
                         speed: 1000,
                         nextArrow: '.next',
-                        prevArrow: '.prev'
+                        prevArrow: '.prev',
+                        responsive: [
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    pauseOnFocus: false,
+                                    pauseOnHover: false,
+                                    swipe : false,
+                                    waitForAnimate : false
+                                },
+                                breakpoint: 480,
+                                settings: {
+                                    pauseOnFocus: false,
+                                    pauseOnHover: false,
+                                    swipe : false,
+                                    waitForAnimate : false
+                                }
+                            }
+                        ]
                     },
                     instaOptions: {
                         arrows: true,

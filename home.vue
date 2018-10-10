@@ -29,7 +29,7 @@
                         <!--        </a>-->
                         <!--    </div>-->
                         <!--</div>-->
-                        <div v-if="homeBanners" v-for="banner in homeBanners">
+                        <div >
  
                             <div v-else-if="!banner.url">
                                 <div class="banner_image" v-bind:style="{ backgroundImage: 'url(//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/jpeg/1539201852000/lbtc_home_1925x470-compressor.jpg)' }"></div>

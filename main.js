@@ -144,11 +144,6 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
                         iconClass: "fab fa-facebook"
                     },
                     {
-                        name: "Twitter",
-                        url: "https://twitter.com/LBTowneCentr",
-                        iconClass: "fab fa-twitter"
-                    },
-                    {
                         name: "Instagram",
                         url: "https://www.instagram.com/LBTowneCenter",
                         iconClass: "fab fa-instagram"

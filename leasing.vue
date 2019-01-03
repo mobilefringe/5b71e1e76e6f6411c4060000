@@ -5,7 +5,7 @@
             <div v-if="dataLoaded" v-cloak>
                 <div class="inside_page_header" v-if="pageBanner" v-bind:style="{ background: 'linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(' + pageBanner.image_url + ') center center' }">
                     <div class="main_container position_relative">
-                        <h2>Leasing</h2>
+                        <h2>Pop-up Specialty Leasing</h2>
                     </div>
                 </div>
                 <div class="main_container">
@@ -46,63 +46,5 @@ So, are you ready to “pop up” with us? Then let’s talk!</p>
 </template>
 
 <script>
-	define(["Vue", "vuex"], function(Vue, Vuex) {
-		return Vue.component("location-component", {
-            template: template, // the variable template will be injected
-            data: function () {
-                return {
-                    dataLoaded: false,
-                    pageBanner: null,
-                    main: null,
-                    leasingInfo: null,
-                    leasingBooklet: null,
-                    pageImages: null
-                }
-            },
-            created() {
-                this.loadData().then(response => {
-                    var temp_repo = this.findRepoByName('Leasing Banner').images;
-                    if(temp_repo != null) {
-                        this.pageBanner = temp_repo[0];
-                    } else {
-                        this.pageBanner = {
-                            "image_url": "//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/jpeg/1529532304000/insidebanner2.jpg"
-                        }
-                    }
-                    
-                    var temp_repo1 = this.findRepoByName('Leasing Booklet');
-                    if(temp_repo1) {
-                        this.leasingBooklet = temp_repo1.images[0].image_url;
-                    }
-
-                    var temp_repo2 = this.findRepoByName('Leasing Images');
-                    if(temp_repo2) {
-                        this.pageImages = temp_repo2.images;
-                    }
-
-                    this.main = response[1].data;
-                    this.leasingInfo = response[1].data.subpages[0]
-                    this.dataLoaded = true;
-                });
-            },
-            computed: {
-                ...Vuex.mapGetters([
-                    'property',
-                    'repos',
-                    'findRepoByName'
-                ])
-            },
-            methods: {
-                loadData: async function () {
-                    this.property.mm_host = this.property.mm_host.replace("http:", "");
-                    try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "repos"), this.$store.dispatch('LOAD_PAGE_DATA', {url: this.property.mm_host + "/pages/longbeach-pop-ups-specialty-leasing.json"})]);
-                        return results;
-                    } catch (e) {
-                        console.log("Error loading data: " + e.message);
-                    }
-                }
-            }
-        });
-	});
+var _extends=Object.assign||function(e){for(var a=1;a<arguments.length;a++){var t=arguments[a];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n])}return e};define(["Vue","vuex"],function(e,a){return e.component("location-component",{template:template,data:function(){return{dataLoaded:!1,pageBanner:null,main:null,leasingInfo:null,leasingBooklet:null,pageImages:null}},created:function(){var e=this;this.loadData().then(function(a){var t=e.findRepoByName("Leasing Banner").images;e.pageBanner=null!=t?t[0]:{image_url:"//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/jpeg/1529532304000/insidebanner2.jpg"};var n=e.findRepoByName("Leasing Booklet");n&&(e.leasingBooklet=n.images[0].image_url);var r=e.findRepoByName("Leasing Images");r&&(e.pageImages=r.images),e.main=a[1].data,e.leasingInfo=a[1].data.subpages[0],e.dataLoaded=!0})},computed:_extends({},a.mapGetters(["property","repos","findRepoByName"])),methods:{loadData:function(){var e;return regeneratorRuntime.async(function(a){for(;;)switch(a.prev=a.next){case 0:return this.property.mm_host=this.property.mm_host.replace("http:",""),a.prev=1,a.next=4,regeneratorRuntime.awrap(Promise.all([this.$store.dispatch("getData","repos"),this.$store.dispatch("LOAD_PAGE_DATA",{url:this.property.mm_host+"/pages/longbeach-pop-ups-specialty-leasing.json"})]));case 4:return e=a.sent,a.abrupt("return",e);case 8:a.prev=8,a.t0=a["catch"](1),console.log("Error loading data: "+a.t0.message);case 11:case"end":return a.stop()}},null,this,[[1,8]])}}})});
 </script>

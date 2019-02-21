@@ -189,24 +189,24 @@
                     'processedEvents'
                 ]),
                 homeBanners() {
+                    <div class="banner_image" v-bind:style="{ backgroundImage: 'url(//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/jpeg/1550771808000/LBTC_HungryTreat219_images1a.jpg)' }"></div>
+                        <div class="banner_image" v-bind:style="{ backgroundImage: 'url(//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/jpeg/1550771808000/LBTC_HungryTreat219_images1b.jpg)' }"></div>
+                        <div class="banner_image" v-bind:style="{ backgroundImage: 'url(//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/jpeg/1539201852000/lbtc_home_1925x470-compressor.jpg)' }"></div>
                     var banners = [];
-                    _.forEach(this.$store.state.banners, function (value, key) {
-                        var today = new Date();
-                        var start = new Date (value.start_date);
-                        if (start <= today){
-                            if (value.end_date){
-                                var end = new Date (value.end_date);
-                                if (end >= today){
-                                    banners.push(value);  
-                                }
-                            } else {
-                                banners.push(value);
-                            }
+                    var temp_image_urls = ["//codecloud.cdn.speedyrails.net/sites/5b71e60b6e6f6411f6070000/image/jpeg/1539372793000/pc_home_1925x470-compressor.jpg","//codecloud.cdn.speedyrails.net/sites/5b71e60b6e6f6411f6070000/image/jpeg/1550603793000/PC_HungryTreat119_images2a.jpg","//codecloud.cdn.speedyrails.net/sites/5b71e60b6e6f6411f6070000/image/jpeg/1550603793000/PC_HungryTreat119_images2b.jpg", "//codecloud.cdn.speedyrails.net/sites/5b71e60b6e6f6411f6070000/image/jpeg/1542071972000/PC_instagram1118_1925x470_1.jpg","//codecloud.cdn.speedyrails.net/sites/5b71e60b6e6f6411f6070000/image/jpeg/1542071964000/PC_generic1118_1925x470_1.jpg"];
+                    var temp_names = ["Treat Yourself","HUNGRY?", null, null, null];
+                    var temp_desc = ["You deserve it.","We know just the place...", null,null,null];
+                    var temp_urls = ["/stores", "/dine", null,null,null];
+                    
+                    _.forEach(temp_image_urls, function (val, key) {
+                        var value = {};
+                        console.log("temp_image_urls[key]", key, temp_image_urls[key])
+                        value.image_url = temp_image_urls[key];
+                        value.name = temp_names[key];
+                        value.description = temp_desc[key];
+                        value.url = temp_urls[key];
                             
-                            if (value.cms_fields.subheader) {
-                                value.heading = value.cms_fields.subheader;
-                            }
-                        }
+                        banners.push(value);
                     });
                     banners = _.orderBy(banners, function(o) { return o.position });
                     return banners

@@ -31,6 +31,8 @@
                         <!--    </div>-->
                         <!--</div>-->
 
+                        <div class="banner_image" v-bind:style="{ backgroundImage: 'url(//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/jpeg/1550771808000/LBTC_HungryTreat219_images1a.jpg)' }"></div>
+                        <div class="banner_image" v-bind:style="{ backgroundImage: 'url(//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/jpeg/1550771808000/LBTC_HungryTreat219_images1b.jpg)' }"></div>
                         <div class="banner_image" v-bind:style="{ backgroundImage: 'url(//codecloud.cdn.speedyrails.net/sites/5b71e1e76e6f6411c4060000/image/jpeg/1539201852000/lbtc_home_1925x470-compressor.jpg)' }"></div>
 
                     </slick>

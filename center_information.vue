@@ -35,8 +35,9 @@
                         <div class="col-md-6" v-if="amenities" v-for="item in amenities">
                             <p class="amenities_title">{{ item.title }}</p>
                             <div class="amenities_body" v-html="item.body"></div>
+                            <br><br><br>
                         </div>
-                        <br><br><br>
+                        
                     </div>
                     
                     <!--<div class="row">-->

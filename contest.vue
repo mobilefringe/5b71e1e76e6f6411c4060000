@@ -125,6 +125,7 @@
                 }, error => {
                     console.error("Could not retrieve data from server. Please check internet connection and try again.");
                 });
+                console.log(currentContest)
             },
             watch : {
                 formSuccess() {

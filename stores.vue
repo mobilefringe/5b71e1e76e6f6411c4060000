@@ -194,9 +194,9 @@
                     var vm = this;
                     _.forEach(this.processedStores, function(value, key) {
                         if (_.includes(value.image_url, 'missing')) {
-                           value.no_store_logo = true;
+                            value.no_store_logo = true;
                         } else {
-                          value.no_store_logo = false;
+                            value.no_store_logo = false;
                         }
                         store_list.push(value);
                     });

@@ -106,7 +106,8 @@
                     return all_stores
                 },
                 allCatergories() {
-                    return this.processedCategories;
+                    var categories = _.filter(this.processedCategories, function(o) { return o.store_ids});
+                    return categories;
                 },
                 dropDownCats() {
                     var cats = _.filter(this.processedCategories, function(o) { return o.name != "Dine Filter"; });

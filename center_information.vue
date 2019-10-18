@@ -48,13 +48,13 @@
                 <!--        <h1 v-if="lowerBanner.name">{{ lowerBanner.name }}</h1>-->
                 <!--    </div>-->
                 <!--</div>-->
+                <div class="location_image_container margin_60">
+                    <div class="location_image" v-if="pageImages" v-for="item in pageImages">
+                        <img :src="item.image_url" alt="" />   
+                    </div>
+                </div>
             </div>
         </transition>
-        <div class="location_image_container margin_60">
-            <div class="location_image" v-if="pageImages" v-for="item in pageImages">
-                <img :src="item.image_url" alt="" />   
-            </div>
-        </div>
     </div>
 </template>
 

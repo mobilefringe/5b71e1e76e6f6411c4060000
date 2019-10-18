@@ -106,7 +106,7 @@
                     return all_stores
                 },
                 allCatergories() {
-                    var categories = _.filter(this.processedCategories, function(o) { return o.store_ids});
+                    var categories = _.filter(this.processedCategories, function(o) { return o.store_ids != null});
                     return categories;
                 },
                 dropDownCats() {

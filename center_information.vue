@@ -20,11 +20,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="location_image_container margin_60">
-                    <div class="location_image" v-if="pageImages" v-for="item in pageImages">
-                        <img :src="item.image_url" alt="" />   
-                    </div>
-                </div>
+                
                 <div class="main_container">
                     <div class="row">
                         <div class="col-md-12">
@@ -46,12 +42,11 @@
                     <!--    </div>-->
                     <!--</div>-->
                 </div>
-                <!--<div class="location_image_container">-->
-                <!--    <div v-if="lowerBanner">-->
-                <!--        <div class="location_banner" v-bind:style="{ background: 'linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(' + lowerBanner.image_url + ') center center fixed' }"></div>-->
-                <!--        <h1 v-if="lowerBanner.name">{{ lowerBanner.name }}</h1>-->
-                <!--    </div>-->
-                <!--</div>-->
+                <div class="location_image_container margin_60">
+                    <div class="location_image" v-if="pageImages" v-for="item in pageImages">
+                        <img :src="item.image_url" alt="" />   
+                    </div>
+                </div>
             </div>
         </transition>
     </div>

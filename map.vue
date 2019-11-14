@@ -132,10 +132,6 @@
                         el.classList.remove("open");
                     }
                 },
-                // getSVGMap () {
-                //     var mapURL = "https://www.mallmaverick.com" + this.property.svgmap_url.split("?")[0];
-                //     return mapURL
-                // },
                 getSVGMap() {
                     var svg_maps = this.findRepoByName("SVG Map").images 
                     var floor_one = "";

@@ -132,6 +132,10 @@
                         el.classList.remove("open");
                     }
                 },
+                // getSVGMap () {
+                //     var mapURL = "https://www.mallmaverick.com" + this.property.svgmap_url.split("?")[0];
+                //     return mapURL
+                // },
                 getSVGMap() {
                     var svg_maps = this.findRepoByName("SVG Map").images 
                     var floor_one = "";
@@ -159,7 +163,10 @@
             methods: {
                 loadData: async function () {
                     try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "categories"), this.$store.dispatch("getData", "repos")]);
+                        let results = await Promise.all([
+                            this.$store.dispatch("getData", "categories"), 
+                            this.$store.dispatch("getData", "repos")
+                        ]);
                         return results;
                     } catch (e) {
                         console.log("Error loading data: " + e.message);

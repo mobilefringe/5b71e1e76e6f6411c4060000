@@ -5,7 +5,7 @@
             <div v-if="dataLoaded" v-cloak>
                 <div class="inside_page_header" v-bind:style="{ backgroundImage: 'url(' + pageBanner.image_url + ')' }">
                     <div class="main_container position_relative">
-                        <h2>Location</h2>
+                        <h1>Location</h1>
                     </div>
                 </div>
                 <div class="main_container">
@@ -16,8 +16,8 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <!--<div v-if="main" v-html="main.body"></div>-->
-                            <p><strong>In the heart of Long Beach, The Long Beach Towne Center is located at 7575 Carson Blvd, Long Beach, CA 90808</strong></p>
+                            <div v-if="main" v-html="main.body"></div>
+                            <!--<p><strong>In the heart of Long Beach, The Long Beach Towne Center is located at 7575 Carson Blvd, Long Beach, CA 90808</strong></p>-->
                         </div>
                     </div>
                 </div>

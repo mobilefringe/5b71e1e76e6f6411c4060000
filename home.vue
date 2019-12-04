@@ -6,16 +6,15 @@
                 <div class="home_banner_container">
                     <div class="prev"></div>
                     <slick ref="slick" :options="slickOptions">
-                        <!-- DYNAMIC BANNERS -->
                         <div v-if="homeBanners" v-for="banner in homeBanners">
-                            <div v-if="banner.name && banner.description && banner.url" class="banner_height">
+                            <div v-if="banner.name && banner.description" class="banner_height">
                                 <div class="banner_image" v-bind:style="{ backgroundImage: 'url(' + banner.image_url + ')' }"></div>
                                 <div class="banner_content_container">
                                     <div class="banner_content">
                                         <span v-if="banner.heading" class="banner_heading">{{ banner.heading }}</span>
                                         <h1 class="banner_title">{{ banner.name }}</h1>
                                         <p class="banner_text">{{ banner.description }}</p>
-                                        <a :href="banner.url">
+                                        <a :href="banner.url" :aria-label="banner.name">
                                             <span class="banner_btn animated_btn">Find Out More</span>
                                         </a>
                                     </div>
@@ -25,7 +24,7 @@
                                 <div class="banner_image" v-bind:style="{ backgroundImage: 'url(' + banner.image_url + ')' }"></div>
                             </div>
                             <div v-else>
-                                <a :href="banner.url">
+                                <a :href="banner.url" :aria-label="banner.name">
                                     <div class="banner_image" v-bind:style="{ backgroundImage: 'url(' + banner.image_url + ')' }"></div>
                                 </a>
                             </div>

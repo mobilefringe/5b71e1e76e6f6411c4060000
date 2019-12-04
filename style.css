@@ -389,7 +389,7 @@ a {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.8125rem;
             font-weight: 300;
-            color: #000;
+            color: $text;
         }
         #userName::-webkit-input-placeholder, #emailAddress::-webkit-input-placeholder {
             font-family: 'Montserrat', sans-serif;

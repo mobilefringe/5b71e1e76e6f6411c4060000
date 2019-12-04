@@ -5,7 +5,7 @@
             <div v-if="dataLoaded" v-cloak>
                  <div class="inside_page_header">
                     <div class="main_container position_relative">
-                        <h1 v-html="currentPage.title"></h1>
+                        <h2 v-html="currentPage.title"></h2>
                     </div>
                 </div>
                 <div class="main_container">
@@ -26,20 +26,14 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "vue-meta"], function (Vue, Vuex, Meta) {
+    define(["Vue", "vuex"], function (Vue, Vuex) {
         return Vue.component("page-details-component", {
             template: template, // the variable template will be injected,
             props: ['id'],
             data: function data() {
                 return {
                     dataLoaded: false,
-                    currentPage: null,
-                    meta: {
-                        meta_title: "",
-                        meta_description: "",
-                        meta_keywords: "",
-                        meta_image: ""
-                    }
+                    currentPage: null
                 }
             },
             created() {
@@ -52,8 +46,7 @@
             },
             computed: {
                 ...Vuex.mapGetters([
-                    'property',
-                    'findMetaDataByPath'
+                    'property'
                 ])
             },
             methods: {
@@ -63,24 +56,11 @@
                     this.$store.dispatch('LOAD_PAGE_DATA', { url: this.property.mm_host + "/pages/" + this.id + ".json" }).then(function (response) {
                         _this.currentPage = response.data;
                         _this.$breadcrumbs[0].meta.breadcrumb = _this.currentPage.title
-                        _this.meta = _this.findMetaDataByPath(_this.$route.path);
                         _this.dataLoaded = true;
                     }, function (error) {
                         console.error( "Could not retrieve data from server. Please check internet connection and try again.");
                         _this.$router.replace({ name: '404' });
                     });
-                }
-            },
-            metaInfo () {
-                return {
-                    title: this.meta.meta_title,
-                    meta: [
-                        { name: 'description', vmid: 'description', content: this.meta.meta_description },
-                        { name: 'keywords',  vmid: 'keywords', content: this.meta.meta_keywords },
-                        { property: 'og:title', vmid: 'og:title', content: this.meta.meta_title },
-                        { property: 'og:description', vmid: 'og:description', content: this.meta.meta_description },
-                        { property: 'og:image', vmid: 'og:image', content: this.meta.meta_image }
-                    ]
                 }
             }
         });

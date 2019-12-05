@@ -118,9 +118,15 @@
                 }, error => {
                     console.error("Could not retrieve data from server. Please check internet connection and try again.");
                 }); 
+                
                 this.$store.dispatch("getData", "contests").then(response => {
                     this.currentContest = this.findContestByShowOnSlug('longbeach-contest');
-                    this.dataLoaded = true;
+                    if (this.currentContest) {
+                        this.dataLoaded = true;
+                    } else {
+                        this.$router.replace({ path: '/' });
+                    }
+                    
                     console.log(this.currentContest)
                 }, error => {
                     console.error("Could not retrieve data from server. Please check internet connection and try again.");

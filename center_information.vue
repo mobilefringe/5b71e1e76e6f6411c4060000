@@ -24,7 +24,7 @@
                 <div class="main_container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="center inside_page_title">Amenities</h3>
+                            <h2 class="center inside_page_title">Amenities</h2>
                         </div>
                     </div>
                     <div class="row">

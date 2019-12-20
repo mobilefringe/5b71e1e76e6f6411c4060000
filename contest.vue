@@ -95,6 +95,12 @@
         </transition>
     </div>
 </template>
+
+<style>
+    a {
+        color: $primary;
+    }
+</style>
 <script>
     define(["Vue", "vuex", "jquery", "axios", "vee-validate"], function(Vue, Vuex, $, axios, VeeValidate) {
         Vue.use(VeeValidate);

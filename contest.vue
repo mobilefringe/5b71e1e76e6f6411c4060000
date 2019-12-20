@@ -166,6 +166,7 @@
             methods: {
                 validateBeforeSubmit() {
                     this.$validator.validateAll().then((result) => {
+                        console.log("slug", this.currentContest.slug )
                         if (result) {
                             let errors = this.errors;
                             //format contests data for MM

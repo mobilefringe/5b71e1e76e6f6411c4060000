@@ -136,7 +136,6 @@
                 this.$store.dispatch("getData", "contests").then(response => {
                     this.currentContest = this.findContestByShowOnSlug('longbeach-contest');
                     if (this.currentContest) {
-                        console.log("prop", this.currentContest)
                         this.dataLoaded = true;
                     } else {
                         this.$router.replace({ path: '/' });
@@ -167,7 +166,6 @@
             methods: {
                 validateBeforeSubmit() {
                     this.$validator.validateAll().then((result) => {
-                        console.log("slug", this.currentContest.slug )
                         if (result) {
                             let errors = this.errors;
                             //format contests data for MM

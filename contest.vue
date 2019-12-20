@@ -170,7 +170,7 @@
                             let errors = this.errors;
                             //format contests data for MM
                             var contest_entry = {};
-                            contest_entry.contest = this.form_data;
+                            contest_entry.json = this.form_data;
                             var vm = this;
                             host_name = this.property.mm_host.replace("http:", "");
                             var url = host_name + "/contests/" + this.currentContest.slug + "/create_js_entry";

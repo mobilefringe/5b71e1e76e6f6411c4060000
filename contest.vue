@@ -72,7 +72,7 @@
         						    </div>
         						     <div class="col-xs-12" :class="{'has-error': errors.has('agree_terms')}">
         						        <label class="checkbox">
-                                            <input name="agree_terms" required type="checkbox" v-model="form_data.terms">
+                                            <input name="agree_terms" required type="checkbox" v-model="form_data.terms" required>
                                                 I have read and agree to the <a href="/pages/longbeach-rules-and-regulations" target="_blank">Contest Rules & Regulations</a>.
                                         </label>
         						    </div>

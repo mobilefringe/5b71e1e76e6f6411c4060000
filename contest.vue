@@ -98,7 +98,7 @@
 
 <style>
     a {
-        color: $primary;
+        color: #5d7e67;
     }
 </style>
 <script>

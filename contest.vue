@@ -96,7 +96,7 @@
     </div>
 </template>
 
-<style>
+<style scoped>
     a {
         color: #5d7e67;
     }

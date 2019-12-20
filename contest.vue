@@ -57,7 +57,7 @@
         								<span v-show="errors.has('email')" class="form-control-feedback">{{ errors.first('email') }}</span>
         							</div>
         						</div>
-        						<div class="form-inline row margin_40">
+        						<div class="form-inline row margin_30">
         						    <div class="col-xs-12">
         						        <label class="checkbox">
                                             <input name="agree_terms" type="checkbox" required >
@@ -77,7 +77,7 @@
                                         </label>
         						    </div>
         					    </div>
-        					    <div class="form-inline row margin_40">
+        					    <div class="form-inline row margin_30">
         						    <div class="col-xs-12">
         						        <p>For more details about personal privacy, please read our <a href="/pages/longbeach-privacy-policy" target="_blank">Privacy Policy</a>.</p>
                                     </div>

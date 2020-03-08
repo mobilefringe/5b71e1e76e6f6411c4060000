@@ -234,6 +234,7 @@
                         if (_.includes(subcategories, 8882)) {
                             this.hasPostmates = true;   
                         }
+                        // restaurant delivery not a subcat for this property
                         // if (_.includes(subcategories, 8244)) {
                         //     this.hasRestaurantDelivery = true;   
                         // }

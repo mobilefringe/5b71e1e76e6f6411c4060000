@@ -107,10 +107,10 @@ require(['Vue', 'vuex', 'vue2-filters', 'vue_router', 'routes', 'vuex-router-syn
                                 name: "Center Map",
                                 href: "/map"
                             },
-                            {
-                                name: "Delivery",
-                                href: "/delivery"
-                            }
+                            // {
+                            //     name: "Delivery",
+                            //     href: "/delivery"
+                            // }
                         ]
                     },
                     {

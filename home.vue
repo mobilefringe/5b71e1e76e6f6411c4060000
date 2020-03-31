@@ -296,7 +296,7 @@
                             [this.$store.dispatch("getData", "banners"), 
                             this.$store.dispatch("getData","promotions"), 
                             this.$store.dispatch("getData", "events"), 
-                            this.$store.dispatch('LOAD_PAGE_DATA', { url: "https://longbeach.mallmaverickstaging.com/api/v4/longbeach/social.json?bust=true" })
+                            this.$store.dispatch('LOAD_PAGE_DATA', { url: "https://longbeach.mallmaverick.com/api/v4/longbeach/social.json" })
                         ]);
                         return results;
                     } catch(e) {
